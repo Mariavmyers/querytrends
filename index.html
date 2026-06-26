@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QueryTrends — Answer Engine Optimization</title>
+<meta name="description" content="When AI recommends a business in your market, is it you — or your competitor? QueryTrends makes your business legible to ChatGPT, Google AI, and Perplexity, so you show up in the answer." />
+
+<!-- Open Graph -->
+<meta property="og:title" content="QueryTrends — Are you in the AI answer, or is your competitor?" />
+<meta property="og:description" content="Search moved inside AI. QueryTrends makes sure the answer engines can read, trust, and recommend your business." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://querytrends.ai/" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- AEO: structured data so machines can read this business (the craft, demonstrated) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "QueryTrends",
+  "url": "https://querytrends.ai",
+  "email": "contact@querytrends.ai",
+  "description": "Answer Engine Optimization. QueryTrends makes businesses visible and recommendable inside AI answer engines and search.",
+  "areaServed": "United States",
+  "knowsLanguage": ["en", "es", "pt"],
+  "founder": {
+    "@type": "Person",
+    "name": "Maria Myers",
+    "jobTitle": "Founder, Trilingual Medical & Legal Interpreter"
+  },
+  "serviceType": ["Answer Engine Optimization", "AI Visibility Audit", "Search Visibility Consulting"]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#0d1330;
+    --bg-2:#0a0f26;
+    --panel:#161d44;
+    --panel-2:#1b2352;
+    --line:#2a3566;
+    --ink:#e8ecfb;
+    --mute:#8b96c4;
+    --gold:#e8b34a;
+    --gold-soft:#f0c97a;
+    --teal:#4fd1c5;
+    --maxw:1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--teal);
+  }
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.08;margin:0;}
+  .serif-it{font-style:italic;font-weight:500;color:var(--gold-soft);}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(10px);
+    background:rgba(13,19,48,.72);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .brand{font-family:"Fraunces",serif;font-weight:700;font-size:21px;letter-spacing:-.01em;}
+  .brand b{color:var(--gold);}
+  .nav-cta{
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.04em;
+    color:var(--bg);background:var(--gold);
+    padding:9px 16px;border-radius:8px;text-decoration:none;font-weight:500;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 22px -8px var(--gold);}
+
+  /* ---------- hero ---------- */
+  .hero{padding:74px 0 60px;position:relative;}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(70% 60% at 70% 0%, rgba(79,209,197,.10), transparent 60%),
+               radial-gradient(50% 50% at 10% 30%, rgba(232,179,74,.08), transparent 60%);
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  .hero h1{font-size:clamp(34px,5.4vw,58px);max-width:16ch;margin:18px 0 0;}
+  .lede{color:var(--mute);font-size:clamp(16px,2vw,19px);max-width:54ch;margin:22px 0 0;}
+  .hero-cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:30px;}
+
+  .btn-primary{
+    display:inline-block;background:var(--gold);color:var(--bg);
+    font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:16px;
+    padding:15px 26px;border-radius:10px;text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px var(--gold);}
+  .btn-ghost{
+    font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--mute);text-decoration:none;
+    border-bottom:1px solid var(--line);padding-bottom:2px;
+  }
+  .btn-ghost:hover{color:var(--ink);border-color:var(--teal);}
+
+  /* ---------- signature: the AI answer card ---------- */
+  .answer-card{
+    margin-top:42px;
+    background:linear-gradient(180deg,var(--panel),var(--bg-2));
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:22px 24px 26px;
+    max-width:620px;
+    box-shadow:0 40px 80px -40px rgba(0,0,0,.7);
+    position:relative;
+  }
+  .answer-card .chip{
+    display:inline-flex;align-items:center;gap:7px;
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--teal);margin-bottom:14px;
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal);}
+  .answer-card .q{
+    font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--ink);
+    border-left:2px solid var(--teal);padding-left:12px;margin-bottom:18px;
+  }
+  .answer-card .a-label{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--mute);margin-bottom:10px;}
+  .rec{
+    display:flex;align-items:center;gap:11px;
+    font-family:"IBM Plex Sans",sans-serif;font-size:15px;
+    padding:9px 0;border-bottom:1px dashed var(--line);
+  }
+  .rec .num{font-family:"IBM Plex Mono",monospace;color:var(--teal);font-size:13px;}
+  .rec .name{color:var(--ink);}
+  .absent{
+    margin-top:16px;font-family:"IBM Plex Mono",monospace;font-size:13.5px;
+    color:var(--gold);display:flex;align-items:center;gap:8px;
+  }
+  .cursor{display:inline-block;width:8px;height:16px;background:var(--gold);vertical-align:middle;animation:blink 1s steps(1) infinite;}
+  @keyframes blink{50%{opacity:0;}}
+  .reveal{opacity:0;transform:translateY(4px);transition:opacity .4s ease, transform .4s ease;}
+  .reveal.show{opacity:1;transform:none;}
+
+  /* ---------- section frame ---------- */
+  section.block{padding:66px 0;border-top:1px solid var(--line);}
+  .kicker{margin-bottom:16px;}
+  h2.big{font-size:clamp(26px,3.6vw,40px);max-width:20ch;}
+  .body-copy{color:var(--mute);font-size:17px;max-width:60ch;margin-top:18px;}
+  .body-copy strong{color:var(--ink);font-weight:600;}
+
+  /* process */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;}
+  .step .s-num{font-family:"Fraunces",serif;font-size:34px;color:var(--gold);line-height:1;}
+  .step h3{font-size:20px;margin:12px 0 8px;}
+  .step p{color:var(--mute);font-size:14.5px;margin:0;}
+
+  /* credibility */
+  .cred{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start;}
+  .cred .stat{
+    background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:14px;
+  }
+  .cred .stat .v{font-family:"Fraunces",serif;font-size:30px;color:var(--gold);line-height:1;}
+  .cred .stat .l{color:var(--mute);font-size:13.5px;margin-top:6px;}
+  .proof-link{
+    display:inline-flex;align-items:center;gap:8px;margin-top:8px;
+    font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--teal);text-decoration:none;
+  }
+  .proof-link:hover{text-decoration:underline;}
+
+  /* tiers */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;}
+  .tier{
+    background:linear-gradient(180deg,var(--panel),var(--bg-2));
+    border:1px solid var(--line);border-radius:16px;padding:26px 22px;
+    display:flex;flex-direction:column;
+  }
+  .tier.featured{border-color:var(--gold);box-shadow:0 30px 60px -34px rgba(232,179,74,.5);}
+  .tier .t-tag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);}
+  .tier.featured .t-tag{color:var(--gold);}
+  .tier h3{font-size:22px;margin:10px 0 4px;}
+  .tier .price{font-family:"IBM Plex Mono",monospace;font-size:15px;color:var(--ink);margin-bottom:14px;}
+  .tier .price span{color:var(--mute);font-size:12.5px;}
+  .tier p{color:var(--mute);font-size:14px;margin:0 0 20px;flex:1;}
+  .tier a.t-cta{
+    text-align:center;text-decoration:none;font-family:"IBM Plex Sans";font-weight:600;font-size:14.5px;
+    padding:12px;border-radius:9px;border:1px solid var(--line);color:var(--ink);
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .tier a.t-cta:hover{border-color:var(--teal);}
+  .tier.featured a.t-cta{background:var(--gold);color:var(--bg);border-color:var(--gold);}
+
+  /* final cta */
+  .final{
+    text-align:center;background:radial-gradient(60% 100% at 50% 0%, rgba(232,179,74,.10), transparent 70%);
+  }
+  .final h2{font-size:clamp(28px,4vw,44px);max-width:18ch;margin:0 auto;}
+  .final p{color:var(--mute);max-width:48ch;margin:18px auto 30px;}
+
+  footer{border-top:1px solid var(--line);padding:36px 0 50px;}
+  .foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center;}
+  .foot-in .tag{font-family:"Fraunces",serif;font-size:18px;}
+  .foot-in .tag b{color:var(--gold);}
+  .foot-in .meta{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--mute);}
+  .foot-in a{color:var(--mute);text-decoration:none;}
+  .foot-in a:hover{color:var(--teal);}
+
+  /* see-yourself widget */
+  .seeyou-card{background:linear-gradient(180deg,var(--panel),var(--bg-2));border:1px solid var(--line);border-radius:16px;padding:24px;margin-top:28px;max-width:760px;}
+  .seeyou-row{display:flex;flex-wrap:wrap;gap:12px;}
+  .seeyou-field{flex:1;min-width:160px;}
+  .seeyou-field label{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:6px;}
+  .seeyou-field input{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:12px 13px;color:var(--ink);font-family:"IBM Plex Sans",sans-serif;font-size:14.5px;outline:none;}
+  .seeyou-field input:focus{border-color:var(--teal);}
+  .seeyou-go{margin-top:14px;background:var(--gold);color:var(--bg);border:none;border-radius:10px;padding:13px 22px;font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:15px;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;}
+  .seeyou-go:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px var(--gold);}
+  .seeyou-results{margin-top:22px;display:none;}
+  .seeyou-results.show{display:block;}
+  .seeyou-q{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--teal);border-left:2px solid var(--teal);padding-left:11px;margin-bottom:12px;}
+  .engine-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;}
+  .engine-btn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink);background:var(--panel-2);border:1px solid var(--line);border-radius:9px;padding:10px 14px;transition:border-color .15s ease,transform .15s ease;}
+  .engine-btn:hover{border-color:var(--gold);transform:translateY(-1px);}
+  .engine-btn small{color:var(--mute);}
+  .seeyou-nudge{font-size:15px;color:var(--mute);border-top:1px solid var(--line);padding-top:16px;line-height:1.5;}
+  .seeyou-nudge a{color:var(--gold);text-decoration:none;font-weight:600;}
+  .seeyou-nudge a:hover{text-decoration:underline;}
+  :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px;}
+
+  @media (max-width:860px){
+    .steps,.tiers{grid-template-columns:1fr;}
+    .cred{grid-template-columns:1fr;gap:24px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .cursor{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand">Query<b>Trends</b></div>
+    <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdQQxD4DwM_bscvmdkhSh_e1zyh4omDFgo7agVvtd_kyhf07A/viewform">Free Visibility Review</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Answer Engine Optimization</div>
+    <h1>When AI recommends a business in your market, is it you — <span class="serif-it">or your competitor?</span></h1>
+
+    <!-- SIGNATURE: a simulated AI answer that leaves you out -->
+    <div class="answer-card" id="answerCard" aria-label="Example AI answer that does not include your business">
+      <div class="chip"><span class="dot"></span> AI answer · live example</div>
+      <div class="q">"who are the best options near me for what I do?"</div>
+      <div class="a-label">Based on the most cited sources, three stand out:</div>
+      <div id="recList">
+        <div class="rec reveal"><span class="num">1</span><span class="name">Northstar &amp; Co.</span></div>
+        <div class="rec reveal"><span class="num">2</span><span class="name">Meridian Group</span></div>
+        <div class="rec reveal"><span class="num">3</span><span class="name">Halcyon Partners</span></div>
+      </div>
+      <div class="absent reveal" id="absentLine">
+        <span class="cursor" aria-hidden="true"></span> …and your business isn't in this answer.
+      </div>
+    </div>
+
+    <p class="lede">Search didn't go away. It moved inside ChatGPT, Google's AI answers, and Perplexity — and those engines only recommend businesses they can read, trust, and cite. QueryTrends makes sure that's <strong style="color:var(--ink)">you</strong>.</p>
+
+    <div class="hero-cta-row">
+      <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdQQxD4DwM_bscvmdkhSh_e1zyh4omDFgo7agVvtd_kyhf07A/viewform">Find out what AI says about you →</a>
+      <a class="btn-ghost" href="#how">How it works</a>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section class="block">
+  <div class="wrap">
+    <div class="eyebrow kicker">The shift nobody warned you about</div>
+    <h2 class="big">The front page of the internet is now a single answer.</h2>
+    <p class="body-copy">For twenty years, getting found meant ranking on Google. Now your customer asks a machine and gets one short list — three names, maybe four. If you're not on it, you're not a page-two result anymore. <strong>You're simply not in the conversation.</strong> And most businesses have no idea whether AI names them or not. That uncertainty is the whole problem — and it's measurable.</p>
+  </div>
+</section>
+
+<!-- WHY NOW -->
+<section class="block">
+  <div class="wrap">
+    <div class="eyebrow kicker">The window</div>
+    <h2 class="big">This shift happens once. The businesses that move first own the answers.</h2>
+    <p class="body-copy">Search and AI are merging into one place your customers ask — and the engines are deciding <strong>right now</strong> which businesses they trust enough to name. Those positions are being set today, while most companies don't even know the game changed. Move while the field is open and you become the default answer. Wait, and you'll be paying to claw back a spot someone else already took. <strong>This is the rare moment when being early is the entire advantage.</strong></p>
+  </div>
+</section>
+
+<!-- SEE YOURSELF -->
+<section class="block">
+  <div class="wrap">
+    <div class="eyebrow kicker">See it with your own eyes</div>
+    <h2 class="big">Don't take my word for it. Ask the AI about your business — right now.</h2>
+    <p class="body-copy">Type what you do and where. This opens the real answer engines with the exact question your customers ask — watch who gets named, and whether it's you. No sign-up, nothing to install.</p>
+
+    <div class="seeyou-card">
+      <div class="seeyou-row">
+        <div class="seeyou-field">
+          <label for="sy-what">What you do</label>
+          <input id="sy-what" type="text" placeholder="e.g. immigration lawyer" autocomplete="off" />
+        </div>
+        <div class="seeyou-field">
+          <label for="sy-city">Your city</label>
+          <input id="sy-city" type="text" placeholder="e.g. Kansas City" autocomplete="off" />
+        </div>
+        <div class="seeyou-field">
+          <label for="sy-name">Your business <small style="text-transform:none;letter-spacing:0">(optional)</small></label>
+          <input id="sy-name" type="text" placeholder="e.g. Acme Law" autocomplete="off" />
+        </div>
+      </div>
+      <button class="seeyou-go" id="sy-go" type="button">Show me what AI says →</button>
+
+      <div class="seeyou-results" id="sy-results" aria-live="polite">
+        <div class="seeyou-q" id="sy-q1"></div>
+        <div class="engine-row" id="sy-row1"></div>
+        <div class="seeyou-q" id="sy-q2" style="display:none"></div>
+        <div class="engine-row" id="sy-row2" style="display:none"></div>
+        <div class="seeyou-nudge">
+          Not in the answer — or buried under competitors? Get a free, personal review of where you're losing visibility and what to fix first — back in your inbox within 48 hours.
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQQxD4DwM_bscvmdkhSh_e1zyh4omDFgo7agVvtd_kyhf07A/viewform">Get your free AI Visibility Review →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  (function(){
+    var go=document.getElementById('sy-go');
+    if(!go) return;
+    function enc(s){return encodeURIComponent(s);}
+    function engines(query){
+      return [
+        {name:'Perplexity', note:'AI answer · no login', url:'https://www.perplexity.ai/search/?q='+enc(query)},
+        {name:'Google', note:'AI Overview', url:'https://www.google.com/search?q='+enc(query)},
+        {name:'ChatGPT', note:'may ask sign-in', url:'https://chatgpt.com/?q='+enc(query)}
+      ];
+    }
+    function render(rowEl, query){
+      rowEl.innerHTML='';
+      engines(query).forEach(function(e){
+        var a=document.createElement('a');
+        a.className='engine-btn';
+        a.href=e.url; a.target='_blank'; a.rel='noopener';
+        a.innerHTML='Ask '+e.name+' <small>· '+e.note+'</small>';
+        rowEl.appendChild(a);
+      });
+    }
+    go.addEventListener('click', function(){
+      var what=(document.getElementById('sy-what').value||'').trim();
+      var city=(document.getElementById('sy-city').value||'').trim();
+      var name=(document.getElementById('sy-name').value||'').trim();
+      if(!what){document.getElementById('sy-what').focus();return;}
+      var loc = city ? (' in '+city) : '';
+      var q1='who are the best '+what+loc+'?';
+      document.getElementById('sy-q1').textContent='\u201C'+q1+'\u201D';
+      render(document.getElementById('sy-row1'), q1);
+      var q2El=document.getElementById('sy-q2');
+      var row2=document.getElementById('sy-row2');
+      if(name){
+        var q2='is '+name+' a good '+what+loc+'?';
+        q2El.textContent='\u201C'+q2+'\u201D';
+        q2El.style.display='block';
+        row2.style.display='flex';
+        render(row2, q2);
+      } else {
+        q2El.style.display='none';
+        row2.style.display='none';
+      }
+      document.getElementById('sy-results').classList.add('show');
+    });
+  })();
+</script>
+
+<!-- WHAT WE DO -->
+<section class="block">
+  <div class="wrap">
+    <div class="eyebrow kicker">What QueryTrends does</div>
+    <h2 class="big">We make your business legible to the machines doing the recommending.</h2>
+    <p class="body-copy">Answer Engine Optimization is the discipline that won search, rebuilt for AI. We engineer the <strong>structured data, citable content, authoritative footprint, and trust signals</strong> that decide whether an answer engine includes you. Then we prove the shift — showing where you appear before and after, in the same engines your customers actually use.</p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="block" id="how">
+  <div class="wrap">
+    <div class="eyebrow kicker">How it works</div>
+    <h2 class="big">Three moves from invisible to recommended.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="s-num">1</div>
+        <h3>Diagnose</h3>
+        <p>A full visibility scan: where AI places you, where it places competitors, and exactly what's missing — backlinks, schema, citable content, authority signals.</p>
+      </div>
+      <div class="step">
+        <div class="s-num">2</div>
+        <h3>Build</h3>
+        <p>We close the gaps. Structured data, the Q&amp;A and entity content AI engines cite, and the trustworthy footprint that gets you into the answer.</p>
+      </div>
+      <div class="step">
+        <div class="s-num">3</div>
+        <h3>Stay visible</h3>
+        <p>The engines change weekly. We monitor your standing and hold your position as the rules shift — so you don't drop back out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDIBILITY -->
+<section class="block">
+  <div class="wrap">
+    <div class="eyebrow kicker">Who's behind it</div>
+    <div class="cred">
+      <div>
+        <h2 class="big" style="font-size:clamp(24px,3vw,34px)">Built by a translator between languages — and now between your business and the machines that aren't yet fluent in them.</h2>
+        <p class="body-copy">Maria Myers has spent <strong>20+ years as a trilingual interpreter across medicine, law, finance, and tech</strong> — in English, Spanish, and Brazilian Portuguese — the highest-stakes language work there is, where a wrong word can cost a diagnosis, a case, or a deal. Today's AI engines are trained mostly in English and miss the nuance, the specialized vocabulary, and the cultural context she's spent two decades mastering. <strong>That gap — the languages and meaning LLMs aren't fluent in — is exactly what QueryTrends bridges.</strong></p>
+        <p class="body-copy">She also reads markets for a living — a trader's eye for where things move before the crowd arrives. She saw search and AI collapsing into a single answer early, and went deep across all three layers of being found: <strong>SEO</strong> (classic search), <strong>GEO</strong> (generative engine optimization), and <strong>AEO</strong> (answer engine optimization). Most agencies still only work the first. QueryTrends works all three — because that's where visibility is won now.</p>
+        <a class="proof-link" href="https://sportdgx.com" target="_blank" rel="noopener">View GO2CUP — the live proof of method ↗</a>
+        <p class="body-copy" style="font-size:14.5px;margin-top:10px">GO2CUP earns its visibility with <strong>no ad budget</strong> — not because it's easy, but because the method is exact. That method took twenty years of language mastery and relentless testing to build. It's the part you can't shortcut — and it's exactly what you're hiring.</p>
+      </div>
+      <div>
+        <div class="stat"><div class="v">20+ yrs</div><div class="l">Interpreting medicine, law, finance &amp; tech — the highest-stakes language work there is.</div></div>
+        <div class="stat"><div class="v">3 languages</div><div class="l">English · Spanish · Brazilian Portuguese — fluent where the AI engines aren't.</div></div>
+        <div class="stat"><div class="v">SEO · GEO · AEO</div><div class="l">All three layers of being found — most agencies still do only one.</div></div>
+        <div class="stat"><div class="v">Without ads</div><div class="l">Visibility by method, not money — the skill that replaces ad spend is the skill you hire.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section class="block">
+  <div class="wrap">
+    <div class="eyebrow kicker">From diagnosis to done-for-you</div>
+    <h2 class="big">Three ways to get found — and stay found.</h2>
+    <div class="tiers">
+      <div class="tier">
+        <div class="t-tag">Know exactly where you stand</div>
+        <h3>Deep MRI</h3>
+        <div class="price">$1,800 <span>· one-time</span></div>
+        <p>Your complete situation, diagnosis, and treatment plan — the full scan of how AI and search see you, with a prioritized fix list. Delivered within 48 hours. Yours to act on with me, or on your own.</p>
+        <a class="t-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdQQxD4DwM_bscvmdkhSh_e1zyh4omDFgo7agVvtd_kyhf07A/viewform">Request your Deep MRI</a>
+      </div>
+      <div class="tier featured">
+        <div class="t-tag">Most chosen · I do the work</div>
+        <h3>Done-For-You Fix</h3>
+        <div class="price">$3,500 <span>· one-time + $1,500/mo</span></div>
+        <p>I fix everything the Deep MRI found, end to end — schema, citable content, authority and backlink groundwork — then keep you in the answer month after month as the engines change.</p>
+        <a class="t-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdQQxD4DwM_bscvmdkhSh_e1zyh4omDFgo7agVvtd_kyhf07A/viewform">Start the fix</a>
+      </div>
+      <div class="tier">
+        <div class="t-tag">Built from scratch</div>
+        <h3>AI-Powered Website Build</h3>
+        <div class="price">from $6,000 <span>· build + $1,500/mo</span></div>
+        <p>A complete, AI-optimized website built for you from the ground up to be found by both search and AI — then maintained so it stays visible while competitors fall behind.</p>
+        <a class="t-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdQQxD4DwM_bscvmdkhSh_e1zyh4omDFgo7agVvtd_kyhf07A/viewform">Plan my build</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="block final">
+  <div class="wrap">
+    <div class="eyebrow kicker" style="text-align:center">No pitch. Just the truth about your visibility.</div>
+    <h2>Find out what AI actually says about your business.</h2>
+    <p>A free, personal AI Visibility Review — I read your answers myself and send back where you're losing visibility and what to fix first, within 48 hours. No cost, no obligation.</p>
+    <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdQQxD4DwM_bscvmdkhSh_e1zyh4omDFgo7agVvtd_kyhf07A/viewform">Get your free review →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div>
+      <div class="tag">Query<b>Trends</b></div>
+      <div class="meta" style="margin-top:6px">Answer Engine Optimization for businesses that intend to be found.</div>
+    </div>
+    <div class="meta">
+      <a href="mailto:contact@querytrends.ai">contact@querytrends.ai</a> · querytrends.ai
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var recs = document.querySelectorAll('#recList .rec');
+    var absent = document.getElementById('absentLine');
+    if(reduce){
+      recs.forEach(function(r){r.classList.add('show');});
+      absent.classList.add('show');
+      return;
+    }
+    var delay = 350;
+    recs.forEach(function(r,i){
+      setTimeout(function(){r.classList.add('show');}, delay + i*420);
+    });
+    setTimeout(function(){absent.classList.add('show');}, delay + recs.length*420 + 350);
+  })();
+</script>
+
+</body>
+</html>
