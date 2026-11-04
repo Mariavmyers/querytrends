@@ -38,7 +38,11 @@ Every assessment looks at six observable dimensions:
 | Authority & citation signals | Where the business is mentioned and trusted |
 | Competitive clarity | Who gets recommended instead, and why |
 
-## From diagnosis to fix
+## QueryTrends Fix (in development 🚧)
+
+The next step after Scout: turning the findings into concrete corrections a business can apply. **QueryTrends Fix is still being built**: details will be added here when it launches.
+
+## From diagnosis to fix (services available today)
 
 | Service | What you get | Price |
 |---|---|---|
